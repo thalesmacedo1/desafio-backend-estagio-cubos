@@ -1,8 +1,10 @@
-import express, { Request, Response, NextFunction } from 'express';
+import {
+  Request, Response, NextFunction, Router,
+} from 'express';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 
-const routes = express.Router();
+const routes = Router();
 
 interface Users {
   id: String;
@@ -33,7 +35,7 @@ function avoidDuplicated(
   return next();
 }
 
-routes.post('/createUser', (request, response) => {
+routes.post('/createUser', (request: Request, response: Response) => {
   const { nome, email, genero } = request.body;
 
   if (!nome || !email || !genero) {
@@ -58,7 +60,7 @@ routes.post('/createUser', (request, response) => {
   fs.writeFile('db.json', temp, () => response.json(newUser));
 });
 
-routes.post('/addToLine', avoidDuplicated, (request, response) => {
+routes.post('/addToLine', avoidDuplicated, (request: Request, response: Response) => {
   const { id } = request.body;
 
   const db = fs.readFileSync('db.json');
@@ -76,7 +78,7 @@ routes.post('/addToLine', avoidDuplicated, (request, response) => {
   fs.writeFile('db.json', temp, () => response.json({ posicao: userIndex + 1 }));
 });
 
-routes.get('/findPosition', (request, response) => {
+routes.get('/findPosition', (request: Request, response: Response) => {
   const { email } = request.query;
 
   const db = fs.readFileSync('db.json');
@@ -91,7 +93,7 @@ routes.get('/findPosition', (request, response) => {
   fs.writeFile('db.json', temp, () => response.json({ posicao: userIndex + 1 }));
 });
 
-routes.get('/showLine', (request, response) => {
+routes.get('/showLine', (request: Request, response: Response) => {
   const db = fs.readFileSync('db.json');
   const data: UserRegister = JSON.parse(db.toString());
 
@@ -106,7 +108,7 @@ routes.get('/showLine', (request, response) => {
   fs.writeFile('db.json', temp, () => response.json(formatedQueue));
 });
 
-routes.get('/filterLine', (request, response) => {
+routes.get('/filterLine', (request: Request, response: Response) => {
   const { genero: gender } = request.query;
 
   const db = fs.readFileSync('db.json');
@@ -125,7 +127,7 @@ routes.get('/filterLine', (request, response) => {
   fs.writeFile('db.json', temp, () => response.json(queueByGender));
 });
 
-routes.delete('/popLine', (request, response) => {
+routes.delete('/popLine', (request: Request, response: Response) => {
   const db = fs.readFileSync('db.json');
   const data: UserRegister = JSON.parse(db.toString());
   if (data.queue.length === 0) {

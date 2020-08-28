@@ -82,7 +82,7 @@ describe('Fila', () => {
       .send(response.body.id);
 
     const listQueue = await request(routes)
-      .get('showLine');
+      .get('/showLine');
 
     expect(listQueue.body).toEqual(
       expect.arrayContaining([

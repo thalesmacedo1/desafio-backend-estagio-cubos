@@ -10,12 +10,14 @@ Clone o repositório:\
 
 ### Iniciar API
 Para rodar a API use:\
-`yarn dev`
+`yarn dev`\
 ### Testes Unitários
 Para rodar os testes use:\
 `yarn test`
 
 ## Rotas
+Obs.: Localmente o servidor está alocado em:
+`http://localhost:3333/`
 
 <b>Cadastrar usuário</b>\
 Endpoint: /createUser\
@@ -65,6 +67,6 @@ Query Params:
 Endpoint: /popLine\
 Método: [DELETE]
 
-## Exemplos das diferentes requisições
+## Exemplos das diferentes requisições 
 
 https://documenter.getpostman.com/view/8896044/TVCb5W7d
