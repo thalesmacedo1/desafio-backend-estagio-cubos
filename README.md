@@ -4,7 +4,7 @@
 Essa API serve para gerenciar uma fila de pessoas. Os dados são categorizados em dois grupos: banco de usuários e fila.
 
 ## Uso
-Clone o repositório
+Clone o repositório:\
 `git clone https://github.com/thalesmacedo1/desafio-backend-estagio-cubos.git`\
 `cd desafio-backend-estagio-cubos`
 

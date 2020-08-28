@@ -1,15 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
-// import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
 
 const routes = express.Router();
-
-// const db = fs.readFileSync('db.json');
-// const data = JSON.parse(db.toString());
-
-// git remote add origin https://github.com/thalesmacedo1/desafio-backend-estagio-cubos.git
-// git branch -M master
-// git push -u origin master
 
 interface Users {
   id: String;
