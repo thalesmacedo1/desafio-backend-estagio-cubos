@@ -10,7 +10,7 @@ Clone o repositório:\
 
 ### Iniciar API
 Para rodar a API use:\
-`yarn dev`\
+`yarn dev`
 ### Testes Unitários
 Para rodar os testes use:\
 `yarn test`
@@ -45,7 +45,7 @@ Body:
 ```
 
 <b>Buscar usuário na fila</b>\
-/findPosition\
+Endpoint: /findPosition\
 Método: [GET]
 
 Query Params:
